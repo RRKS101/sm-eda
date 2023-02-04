@@ -41,6 +41,7 @@ Currently the only fields implemented are color/colour which supports comparing 
 The filter can use ==,!=,>,>=,< and <= to compare both rgb and rgb channels. 
 When performing a comparason on all channels, i.e; rgb, it will act like a 3D-vector comparason, where it is only greater if all channels are true, otherwise it is false and will be removed from the selection
 
-### Example Commands
-`select colour r > 2A`
-`select active == 1`
+Its worth noting that the selection by default selects all blocks and will _exclude_ blocks as they fail to meet selection criteria. 
+Additionally, running multiple selection commands after one another will _not_ reset the selection but rather refine it, i.e; only blocks that meet `select ...` AND `select ....` will remain selected.
+
+Currently no command to modify these fields exists.
